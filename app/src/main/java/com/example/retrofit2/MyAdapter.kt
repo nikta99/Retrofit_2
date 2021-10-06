@@ -16,8 +16,7 @@ Listener) : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
     }
 
 
- //   private val colors : Array<String> = arrayOf("#7E57C2", "#42A5F5", "#26C6DA", "#66BB6A", "#FFEE58", "#FF7043" , "#EC407A" , "#d32f2f")
-    private val colors : Array<String> = arrayOf("#7E57C2", "#42A5F5", "#7E57C2", "#42A5F5", "#7E57C2", "#42A5F5" , "#7E57C2", "#42A5F5")
+    private val colors : Array<String> = arrayOf("#7E57C2", "#42A5F5")
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -39,7 +38,7 @@ Listener) : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
         fun bind(loginUser: LoginUser, listener: Listener, colors : Array<String>, position: Int) {
 
             itemView.setOnClickListener{ listener.onItemClick(loginUser) }
-            itemView.setBackgroundColor(Color.parseColor(colors[position % 8]))
+            itemView.setBackgroundColor(Color.parseColor(colors[position % 2]))
             itemView.text_name.text = loginUser.login
             itemView.text_price.text = loginUser.type
 
